@@ -5,11 +5,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import PersonTable from './Components/PersonTable';
 import { Container } from 'react-bootstrap';
+import Create from './Components/Create';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Container>
+      <Create />
       <PersonTable />
     </Container>
   </React.StrictMode>
