@@ -88,7 +88,9 @@ function Edit() {
 
   return (
     <div>
-      <h3>Edit Form</h3>
+      <h3 style={{ marginTop: '15px', marginBottom: '15px' }}>
+        Edit Form
+      </h3>
       <Form>
         <Form.Group>
           <Form.Label>First Name</Form.Label>
@@ -121,6 +123,7 @@ function Edit() {
         </Form.Group>
         <div> </div>
         <Button
+          style={{ marginTop: '15px', marginBottom: '15px' }}
           variant="primary"
           type="submit"
           onClick={(e) => handleEdit(e)}

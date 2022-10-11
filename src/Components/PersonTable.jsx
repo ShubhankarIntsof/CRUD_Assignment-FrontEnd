@@ -15,6 +15,7 @@ function PersonTable() {
 
   function handleDetails(e, i) {
     console.log(i);
+    navigate('/details/' + i);
   }
   function handleEdit(e, i) {
     console.log(i);
@@ -55,6 +56,9 @@ function PersonTable() {
     });
   }
 
+  function navCreate(e) {
+    navigate('/create');
+  }
   const fetchData = () => {
     fetch(URL)
       .then((res) => res.json())
@@ -68,7 +72,14 @@ function PersonTable() {
 
   return (
     <>
-      <h3>Persons</h3>
+      <h3 style={{ marginTop: '20px' }}>Persons</h3>
+
+      <Button
+        style={{ marginTop: '15px', marginBottom: '15px' }}
+        onClick={(e) => navCreate(e)}
+      >
+        Create
+      </Button>
 
       <div>
         <Table striped bordered hover>
