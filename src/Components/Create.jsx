@@ -30,10 +30,13 @@ function Create() {
         console.log('ERRR' + err);
         alert(err);
       }
+
       navigate('/');
+      window.location.reload();
     } else {
       alert('Please fill all details');
     }
+    navigate('/');
   }
 
   return (
