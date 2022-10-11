@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { confirmAlert } from 'react-confirm-alert'; // Import
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-import { Link } from 'react-router-dom';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
+import { useNavigate } from 'react-router-dom';
 function PersonTable() {
   const [data, setData] = useState([]);
   const URL = 'https://localhost:44334/api/Person';
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchData();
@@ -17,12 +18,12 @@ function PersonTable() {
   }
   function handleEdit(e, i) {
     console.log(i);
+    navigate('/edit/' + i);
   }
 
   function Delete(i) {
-    const delUrl = 'https://localhost:44334/api/Person/';
     const request = { method: 'DELETE' };
-    fetch(delUrl + i, request)
+    fetch(URL + '/' + i, request)
       .then((response) => {
         return response.json();
       })
