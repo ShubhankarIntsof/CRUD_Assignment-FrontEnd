@@ -68,16 +68,7 @@ function Edit() {
         });
       } catch (err) {
         console.log('ERRR' + err);
-        confirmAlert({
-          title: 'Error',
-          message: 'Something went Wrong',
-          buttons: [
-            {
-              label: 'OK',
-              onClick: () => {},
-            },
-          ],
-        });
+        alert(err);
       }
       navigate('/');
     } else {

@@ -34,9 +34,18 @@ function Details() {
       <h3>Details</h3>
       <Card style={{ marginTop: '45px' }}>
         <ListGroup variant="flush">
-          <ListGroup.Item>{data.first_Name}</ListGroup.Item>
-          <ListGroup.Item>{data.last_Name}</ListGroup.Item>
-          <ListGroup.Item>{data.address}</ListGroup.Item>
+          <ListGroup.Item>
+            <h5>First Name</h5>
+            {data.first_Name}
+          </ListGroup.Item>
+          <ListGroup.Item>
+            <h5>Last Name</h5>
+            {data.last_Name}
+          </ListGroup.Item>
+          <ListGroup.Item>
+            <h5>Address</h5>
+            {data.address}
+          </ListGroup.Item>
         </ListGroup>
       </Card>
       <Button

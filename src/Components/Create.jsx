@@ -17,7 +17,7 @@ function Create() {
       console.log(firstName + ' ' + lastName + ' ' + address);
       e.preventDefault();
       try {
-        const res = fetch(URL, {
+        fetch(URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -28,16 +28,7 @@ function Create() {
         });
       } catch (err) {
         console.log('ERRR' + err);
-        confirmAlert({
-          title: 'Error',
-          message: 'Something went Wrong',
-          buttons: [
-            {
-              label: 'OK',
-              onClick: () => {},
-            },
-          ],
-        });
+        alert(err);
       }
       navigate('/');
     } else {
@@ -77,6 +68,7 @@ function Create() {
         </Form.Group>
         <div> </div>
         <Button
+          style={{ marginTop: '15px' }}
           variant="primary"
           type="submit"
           onClick={(e) => handleCreate(e)}
